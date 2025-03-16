@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Style */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        section {
+            margin: 30px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        #intro {
+            background-color: #fff0f5;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #gallery {
+            background-color: #ffebf1;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #gallery h2 {
+            color: #ff69b4;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        #message {
+            background-color: #fff0f5;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .signature {
+            font-style: italic;
+            color: #ff1493;
+        }
+
+        /* Animation for smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Play Song Button Styling */
+        .play-button {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            transform: scale(1.1);
+        }
+
+        .play-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+
+        /* Center the button div */
+        .button-container {
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center;     /* Vertically center */
+            height: 20vh;           /* Full height of viewport */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>To the Love of My Life</h1>
+    </header>
+
+    <section id="intro">
+        <h2>Every moment with you is a treasure</h2>
+        <p>Our journey together has been filled with laughter, love, and unforgettable memories.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>You are in My Memories</h2>
+        <div class="image-container">
+            <img src="akki1.jpg" alt="Our first date">
+        </div>
+        <!-- Play Song Button -->
+    <!-- Centered Play Song Button -->
+    <div class="button-container">
+        <button class="play-button" onclick="document.getElementById('myAudio').play()">Play Song</button>
+    </div>
+    </section>
+
+    <section id="message">
+        <h2>My Heartfelt Message</h2>
+        <p>I don’t even know where to start because words seem so small compared to the depth of what I feel for you.
+            Every day without you feels like an eternity, and I find myself longing for your presence in ways I never
+            thought possible. The moments we’ve shared and the love we’ve built in our hearts are more than just
+            memories — they’re pieces of me that I carry with me, even from a distance.</p>
+        <p>I want you to know that no matter the space between us, you’ve never left my thoughts for even a second. I
+            miss you in a way that feels like an ache I can’t describe. Every morning when I wake up and every night
+            when I close my eyes, you’re there. It’s not just your laughter or the way your eyes light up when you smile
+            that I miss — it’s *you*, in all your beautiful complexity. Your kindness, your strength, your heart. You’ve
+            touched my life in ways I never imagined, and every day without you feels incomplete.</p>
+        <p>I know things are complicated right now, and I respect whatever we both need to heal or grow. But please know
+            this: My love for you hasn’t faded, and it never will. You mean more to me than words can ever express. You
+            are my heart’s home, and even though we may be apart for now, I carry you with me everywhere I go.</p>
+        <p>I believe that love like ours doesn’t just disappear. It may pause, it may take a different shape for a
+            while, but it’s never gone. I hope that in some way, even though we’re not together right now, you can feel
+            the love I’m sending you across the distance. I’m here, thinking of you, loving you with everything I have.
+        </p>
+        <p>Take care of yourself, my love, and always know that I’m missing you more than I can put into words.</p>
+        <p>Forever yours, <span class="signature">Riddhesh</span></p>
+    </section>
+
+    <footer>
+        <p>Created with love and affection, just for you.</p>
+    </footer>
+
+    <!-- Audio Player -->
+    <audio id="myAudio" loop>
+        <source src="videoplayback.m4a" type="audio/m4a">
+        <!-- In case the browser does not support m4a, fall back to mp3 -->
+        <source src="videoplayback.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Simple Animation for scrolling effect
+            const images = document.querySelectorAll(".image-container img");
+
+            images.forEach((img) => {
+                img.addEventListener("mouseover", () => {
+                    img.style.transform = "scale(1.1)";
+                });
+
+                img.addEventListener("mouseout", () => {
+                    img.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
